@@ -1,0 +1,58 @@
+body {
+    background-color: #111;
+    color: white;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+img {
+    border-radius: 10px;
+}
+
+#reloj {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    border: 2px solid white;
+    border-radius: 10px;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+#saludo {
+    margin-top: 10px;
+    font-style: italic;
+    font-size: 1.1em;
+    color: #dddddd;
+}
+
+p {
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+figure {
+    margin: 30px auto;
+}
+
+figcaption {
+    margin-top: 8px;
+    font-size: 0.9em;
+    color: #bbbbbb;
+    font-style: italic;
+}
+
+.music-links {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.music-links img {
+    transition: transform 0.2s ease;
+    cursor: pointer;
+}
+
+.music-links img:hover {
+    transform: scale(1.05);
+}
