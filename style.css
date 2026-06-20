@@ -56,3 +56,75 @@ figcaption {
 .music-links img:hover {
     transform: scale(1.05);
 }
+
+#volver-arriba {
+    position: fixed;
+    bottom: 80px;
+    right: 80px;
+
+    width: 70px;
+    height: 70px;
+
+    border: none;
+    border-radius: 50%;
+
+    background-color: #333;
+    color: white;
+
+    font-size: 30px;
+    cursor: pointer;
+
+    opacity: 0;
+    pointer-events: none;
+
+    transform: translateY(15px);
+
+    transition:
+        opacity 0.4s ease,
+        transform 0.4s ease;
+}
+
+#volver-arriba:hover {
+    background-color: #555;
+}
+
+#volver-arriba.visible {
+    opacity: 1;
+    pointer-events: auto;
+
+    transform: translateY(0);
+}
+
+.album-cover {
+    width: 350px;
+    height: 350px;
+
+    object-fit: cover;
+
+    border-radius: 10px;
+}
+
+.album {
+    display: flex;
+    align-items: center;
+
+    gap: 30px;
+
+    max-width: 1000px;
+    margin: 40px auto;
+}
+
+.album-cover {
+    width: 350px;
+    border-radius: 10px;
+
+    transition: transform 0.3s ease;
+}
+
+.album-cover:hover {
+    transform: scale(1.03);
+}
+
+.album-text {
+    text-align: left;
+}
