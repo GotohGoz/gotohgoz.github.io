@@ -128,3 +128,37 @@ figcaption {
 .album-text {
     text-align: left;
 }
+
+.guitarra-transformacion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin: 30px auto;
+}
+
+.guitarra-transformacion img {
+    width: 500px;
+    height: 500px;
+    object-fit: contain;
+}
+
+.flecha-transformacion {
+    font-size: 50px;
+}
+
+@media (max-width: 850px) {
+    .guitarra-transformacion {
+        flex-direction: column;
+    }
+
+    .flecha-transformacion {
+        transform: rotate(90deg);
+    }
+
+    .guitarra-transformacion img {
+        width: 90%;
+        max-width: 350px;
+        height: auto;
+    }
+}
