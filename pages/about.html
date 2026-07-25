@@ -1,6 +1,7 @@
 ---
 title: "Sobre mí"
 heading: "Sobre mí!"
+permalink: /about.html
 ---
 
 <h2>Introducción</h2>
@@ -10,8 +11,10 @@ heading: "Sobre mí!"
     </p>
 
     <figure>
-        <img src="images/Gatito.jpg" width="300">
-
+        <img
+        src="{{ '/assets/images/site/Gatito.jpg' | relative_url }}"
+        width="300"
+        >
         <figcaption>
             Les presento a Gatito, es precioso.
         </figcaption>
@@ -24,7 +27,7 @@ heading: "Sobre mí!"
     </p>
 
     <figure>
-        <img src="images/Guitarra.jpg" width="300">
+        <img src="{{ '/assets/images/site/Guitarra.jpg' | relative_url }}" width="300">
 
         <figcaption>
             Esta es mi guitarra, es la primera que tengo jeje.
@@ -38,7 +41,7 @@ heading: "Sobre mí!"
     </p>
 
     <figure>
-        <img src="images/Albumes.jpg" width="900">
+        <img src="{{ '/assets/images/site/Albumes.jpg' | relative_url }}" width="900">
 
         <figcaption>
             Algunos de mis albumes/EPs favoritos, no están en orden.
@@ -52,7 +55,7 @@ heading: "Sobre mí!"
     </p>
 
     <figure>
-        <img src="images/Manga.jpg" width="900">
+        <img src="{{ '/assets/images/site/Manga.jpg' | relative_url }}" width="900">
 
         <figcaption>
             Algunos de mis mangas favoritos del momento, no están en orden.

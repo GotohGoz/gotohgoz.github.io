@@ -2,7 +2,7 @@
   titulo: "君繋ファイブエム (Connected to You 5M)"
   detalle: "Álbum - 2003"
   enlace: "https://music.apple.com/cl/album/君繋ファイブエム/1536363189"
-  imagen: "/music/images/AKFG_Album.jpg"
+  imagen: "/assets/images/music/AKFG_Album.jpg"
   parrafos:
     - >
       Esto es una prueba. Aquí irá mi comentario personal
@@ -12,7 +12,7 @@
   titulo: "The End of Yesterday"
   detalle: "Álbum - 2022"
   enlace: "https://music.apple.com/cl/album/the-end-of-yesterday/1659013026"
-  imagen: "/music/images/ELLEGARDEN_Album.jpg"
+  imagen: "/assets/images/music/ELLEGARDEN_Album.jpg"
   parrafos:
     - >
       Esto es la prueba dos.

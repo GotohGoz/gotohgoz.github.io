@@ -162,3 +162,125 @@ figcaption {
         height: auto;
     }
 }
+
+.animanga-card {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+
+    max-width: 1000px;
+    margin: 40px auto;
+}
+
+.animanga-cover {
+    width: 220px;
+    height: 320px;
+    object-fit: cover;
+
+    border-radius: 10px;
+
+    transition: transform 0.35s ease;
+}
+
+.animanga-cover:hover {
+    transform: scale(1.03);
+}
+
+.animanga-text {
+    text-align: left;
+    flex: 1;
+}
+
+.animanga-text p {
+    max-width: none;
+    margin: 12px 0;
+}
+
+.animanga-detail {
+    color: #bbbbbb;
+    font-size: 0.9em;
+    font-style: italic;
+}
+
+@media (max-width: 700px) {
+    .animanga-card {
+        flex-direction: column;
+    }
+
+    .animanga-text {
+        text-align: center;
+    }
+
+    .animanga-cover {
+        width: 200px;
+        height: auto;
+    }
+}
+
+.animanga-filtros {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    gap: 20px;
+    margin: 30px auto 40px;
+}
+
+.animanga-control {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.animanga-control label {
+    font-weight: bold;
+}
+
+.animanga-control select {
+    padding: 8px 12px;
+
+    font: inherit;
+    color: inherit;
+
+    background-color: transparent;
+    border: 1px solid currentColor;
+    border-radius: 6px;
+
+    cursor: pointer;
+}
+
+/*
+La clase animanga-card probablemente usa display: flex.
+Esta regla garantiza que el atributo hidden pueda ocultarla.
+*/
+.animanga-card[hidden] {
+    display: none;
+}
+
+#animanga-sin-resultados {
+    margin: 40px auto;
+    font-style: italic;
+}
+
+.animanga-control select {
+    padding: 8px 12px;
+
+    font: inherit;
+    color: white;
+
+    background-color: #222;
+    border: 1px solid currentColor;
+    border-radius: 6px;
+
+    cursor: pointer;
+}
+
+.animanga-control select option {
+    color: #111;
+    background-color: white;
+}
+
+.animanga-oculta {
+    display: none !important;
+}

@@ -1,0 +1,118 @@
+---
+title: "AniManga"
+heading: "Recomendaciones AniManga y mis favoritos!"
+permalink: /animanga.html
+---
+
+<p>
+    En esta sección hablaré y recomendaré algunos mangas y animes
+    que me han gustado! Además de mencionarles mis favoritos de
+    todos los tiempos!!
+</p>
+
+<p>
+    Estoy actualizando esta sección siempre que termine alguna
+    joyita, así que asegúrate de revisarla cada tanto!
+</p>
+
+<h2>
+    Haz click en una portada para ver su ficha en MyAnimeList!
+</h2>
+
+<section
+    class="animanga-filtros"
+    aria-label="Filtros de AniManga"
+>
+    <div class="animanga-control">
+        <label for="animanga-tipo">
+            Tipo:
+        </label>
+
+        <select id="animanga-tipo">
+            <option value="manga" selected>
+                Manga
+            </option>
+
+            <option value="anime">
+                Anime
+            </option>
+        </select>
+    </div>
+
+    <div class="animanga-control">
+        <label for="animanga-categoria">
+            Sección:
+        </label>
+
+        <select id="animanga-categoria">
+            <option value="recomendaciones" selected>
+                Recomendaciones
+            </option>
+
+            <option value="favoritos">
+                Favoritos
+            </option>
+        </select>
+    </div>
+</section>
+
+<h1 id="animanga-titulo-seccion">
+    Recomendaciones de manga
+</h1>
+
+<p id="animanga-sin-resultados" hidden>
+    Todavía no hay obras en esta sección.
+</p>
+
+<div class="animanga-lista">
+
+{% assign obras = site.data.animanga | sort_natural: "orden" %}
+
+{% for obra in obras %}
+
+    <article
+        class="animanga-card"
+        data-tipo="{{ obra.tipo | downcase | strip | escape }}"
+        data-categorias="{{ obra.categorias | join: ',' | downcase | escape }}"
+    >
+
+        <a
+            href="{{ obra.enlace }}"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Ver la ficha de {{ obra.titulo }} en MyAnimeList"
+        >
+            <img
+                class="animanga-cover"
+                src="{{ obra.imagen | relative_url }}"
+                alt="Portada de {{ obra.titulo }}"
+                loading="lazy"
+            >
+        </a>
+
+        <div class="animanga-text">
+
+            <h3>{{ obra.titulo }}</h3>
+
+            <p class="animanga-detail">
+                {{ obra.tipo }} · {{ obra.generos }}
+            </p>
+
+            {% if obra.estado %}
+                <p>
+                    <strong>Estado:</strong>
+                    {{ obra.estado }}
+                </p>
+            {% endif %}
+
+            <p>{{ obra.comentario }}</p>
+
+        </div>
+
+    </article>
+
+{% endfor %}
+
+</div>
+
+<h1>Más próximamente!</h1>
