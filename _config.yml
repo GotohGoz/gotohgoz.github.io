@@ -1,0 +1,17 @@
+title: "GotohGoz"
+description: "Mi pequeño rincón en los internetes."
+lang: "es-CL"
+
+url: "https://gotohgoz.github.io"
+baseurl: ""
+
+timezone: "America/Santiago"
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+
+exclude:
+  - README.md

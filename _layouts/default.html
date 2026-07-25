@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'es' }}">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        {% if page.title %}
+            {{ page.title }} | {{ site.title }}
+        {% else %}
+            {{ site.title }}
+        {% endif %}
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="{{ '/style.css' | relative_url }}"
+    >
+</head>
+
+<body>
+
+    <header>
+        <h1>{{ page.heading | default: page.title }}</h1>
+
+        {% include nav.html %}
+    </header>
+
+    <main>
+        {{ content }}
+    </main>
+
+    <button
+        id="volver-arriba"
+        type="button"
+        aria-label="Volver al inicio de la página"
+    >
+        ↑
+    </button>
+
+    <script src="{{ '/script.js' | relative_url }}"></script>
+
+</body>
+</html>

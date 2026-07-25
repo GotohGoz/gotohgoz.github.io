@@ -1,82 +1,62 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>GotohGoz</title>
+---
+title: "Inicio"
+heading: "Bienvenidx a mi página!"
+---
 
-    <link rel="stylesheet" href="style.css">
-</head>
+<p>
+    Hola! Este es mi pequeño rincón en los internetes donde subiré y hablaré sobre cosas de mi interés!!
+</p>
 
-<body>
+<br><br>
 
-    <h1>Bienvenidx a mi página!</h1>
-    
-    <nav>
-        <a href="index.html">Inicio</a> |
-        <a href="about.html">Sobre mí</a> |
-        <a href="music/index.html">Música</a> |
-        <a href="animanga.html">AniManga</a> |
-        <a href="projects.html">Proyectos</a>
-    </nav>
+<p id="reloj"></p>
 
-    <br><br>
+<br><br>
 
-    <p>
-        Hola! Este es mi pequeño rincón en los internetes donde subiré y hablaré sobre cosas de mi interés!!
-    </p>
+<img src="images/AnonGif.gif" width="300">
 
-    <br><br>
+<p id="saludo"></p>
 
-    <p id="reloj"></p>
+<script>
+function actualizarReloj() {
+    const ahora = new Date();
 
-    <br><br>
+    const horaChile = ahora.toLocaleString("es-CL", {
+        timeZone: "America/Santiago",
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit",
+        hour12: false
+    });
 
-    <img src="images/AnonGif.gif" width="300">
-
-    <p id="saludo"></p>
-
-    <script>
-    function actualizarReloj() {
-        const ahora = new Date();
-
-        const horaChile = ahora.toLocaleString("es-CL", {
-            timeZone: "America/Santiago",
-            hour: "2-digit",
-            minute: "2-digit",
-            second: "2-digit",
-            hour12: false
-        });
-
-        document.getElementById("reloj").textContent =
-            "Hora en Chile: " + horaChile;
+    document.getElementById("reloj").textContent =
+        "Hora en Chile: " + horaChile;
         
-        const hora = Number(
-            ahora.toLocaleString("en-US", {
-                timeZone: "America/Santiago",
-                hour: "numeric",
-                hour12: false
-            })
-        );
+    const hora = Number(
+        ahora.toLocaleString("en-US", {
+            timeZone: "America/Santiago",
+            hour: "numeric",
+            hour12: false
+        })
+    );
 
-        let saludo;
+    let saludo;
 
-        if (hora >= 6 && hora < 12) {
-            saludo = "Anon-chan te da los buenos días!";
-        }
-
-        else if (hora >=12 && hora <20) {
-            saludo = "Anon-chan te desea una buena tarde!";
-        }
-
-        else {
-            saludo = "Anon-chan te desea una buena noche!"
-        }
-
-        document.getElementById("saludo").textContent = saludo;
+    if (hora >= 6 && hora < 12) {
+        saludo = "Anon-chan te da los buenos días!";
     }
 
-    actualizarReloj();
-    setInterval(actualizarReloj, 1000);
-    </script>
+    else if (hora >=12 && hora <20) {
+        saludo = "Anon-chan te desea una buena tarde!";
+    }
 
-</body>
-</html>
+    else {
+        saludo = "Anon-chan te desea una buena noche!"
+    }
+
+    document.getElementById("saludo").textContent = saludo;
+}
+
+actualizarReloj();
+setInterval(actualizarReloj, 1000);
+</script>
