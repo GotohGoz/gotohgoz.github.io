@@ -1,3 +1,9 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 body {
     background-color: #111;
     color: white;
@@ -6,7 +12,16 @@ body {
 }
 
 img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+
     border-radius: 10px;
+}
+
+main > img,
+figure > img {
+    margin-inline: auto;
 }
 
 #reloj {
@@ -45,6 +60,8 @@ figcaption {
 .music-links {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
+
     gap: 40px;
 }
 
@@ -95,59 +112,41 @@ figcaption {
     transform: translateY(0);
 }
 
-.album-cover {
-    width: 350px;
-    height: 350px;
+@media (max-width: 750px) {
+    #volver-arriba {
+        right: 20px;
+        bottom: 20px;
 
-    object-fit: cover;
+        width: 50px;
+        height: 50px;
 
-    border-radius: 10px;
-}
-
-.album {
-    display: flex;
-    align-items: center;
-
-    gap: 30px;
-
-    max-width: 1000px;
-    margin: 40px auto;
-}
-
-.album-cover {
-    width: 350px;
-    border-radius: 10px;
-
-    transition: transform 0.3s ease;
-}
-
-.album-cover:hover {
-    transform: scale(1.03);
-}
-
-.album-text {
-    text-align: left;
+        font-size: 24px;
+    }
 }
 
 .guitarra-transformacion {
     display: flex;
     justify-content: center;
     align-items: center;
+
     gap: 30px;
     margin: 30px auto;
 }
 
 .guitarra-transformacion img {
-    width: 500px;
-    height: 500px;
+    width: min(40vw, 450px);
+    height: 520px;
+
     object-fit: contain;
+    margin: 0;
 }
 
 .flecha-transformacion {
+    flex: 0 0 auto;
     font-size: 50px;
 }
 
-@media (max-width: 850px) {
+@media (max-width: 1050px) {
     .guitarra-transformacion {
         flex-direction: column;
     }
@@ -157,49 +156,14 @@ figcaption {
     }
 
     .guitarra-transformacion img {
-        width: 90%;
-        max-width: 350px;
-        height: auto;
+        width: min(90vw, 350px);
+        height: 430px;
     }
 }
 
-.animanga-card {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-
-    max-width: 1000px;
-    margin: 40px auto;
-}
-
-.animanga-cover {
-    width: 220px;
-    height: 320px;
-    object-fit: cover;
-
-    border-radius: 10px;
-
-    transition: transform 0.35s ease;
-}
-
-.animanga-cover:hover {
-    transform: scale(1.03);
-}
-
-.animanga-text {
-    text-align: left;
-    flex: 1;
-}
-
-.animanga-text p {
+.entry-text p {
     max-width: none;
     margin: 12px 0;
-}
-
-.animanga-detail {
-    color: #bbbbbb;
-    font-size: 0.9em;
-    font-style: italic;
 }
 
 @media (max-width: 700px) {
@@ -250,14 +214,6 @@ figcaption {
     cursor: pointer;
 }
 
-/*
-La clase animanga-card probablemente usa display: flex.
-Esta regla garantiza que el atributo hidden pueda ocultarla.
-*/
-.animanga-card[hidden] {
-    display: none;
-}
-
 #animanga-sin-resultados {
     margin: 40px auto;
     font-style: italic;
@@ -283,4 +239,278 @@ Esta regla garantiza que el atributo hidden pueda ocultarla.
 
 .animanga-oculta {
     display: none !important;
+}
+
+.projects-list {
+    width: 100%;
+    max-width: 1000px;
+    margin: 40px auto;
+}
+
+.project-image-container {
+    flex: 0 0 280px;
+}
+
+.project-image {
+    display: block;
+
+    width: 100%;
+    max-width: 280px;
+    aspect-ratio: 16 / 10;
+    object-fit: contain;
+
+    border-radius: 10px;
+
+    transition:
+        transform 0.3s ease,
+        opacity 0.3s ease;
+}
+
+.project-image:hover {
+    transform: scale(1.03);
+    opacity: 0.9;
+}
+
+.project-text h2 {
+    margin-top: 0;
+    margin-bottom: 12px;
+}
+
+.project-metadata {
+    margin-bottom: 15px;
+}
+
+.project-metadata p {
+    margin: 4px 0;
+}
+
+.project-summary {
+    max-width: none;
+    margin: 15px 0;
+    line-height: 1.6;
+}
+
+.project-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+
+    margin-top: 20px;
+}
+
+.project-link {
+    display: inline-block;
+
+    padding: 8px 14px;
+
+    color: inherit;
+    text-decoration: none;
+
+    border: 1px solid currentColor;
+    border-radius: 6px;
+
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.project-link:hover {
+    color: #111;
+    background-color: white;
+    text-decoration: none;
+
+    transform: translateY(-2px);
+}
+
+/* Diseño para celulares */
+@media (max-width: 750px) {
+    .project-card {
+        flex-direction: column;
+        align-items: center;
+
+        padding: 20px;
+    }
+
+    .project-image-container {
+        flex: none;
+        width: 100%;
+    }
+
+    .project-image {
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    .project-text {
+        width: 100%;
+        text-align: center;
+    }
+
+    .project-technologies,
+    .project-links {
+        justify-content: center;
+    }
+}
+
+.entry-card {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+
+    width: 100%;
+    max-width: 1000px;
+
+    margin: 45px auto;
+    padding: 25px;
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 12px;
+}
+
+.entry-card > a {
+    flex: 0 0 auto;
+    display: block;
+}
+
+.entry-card img {
+    display: block;
+    border-radius: 10px;
+
+    transition:
+        transform 0.3s ease,
+        opacity 0.3s ease;
+}
+
+.entry-card a:hover img {
+    transform: scale(1.03);
+    opacity: 0.9;
+}
+
+.entry-text {
+    flex: 1;
+    min-width: 0;
+
+    text-align: left;
+}
+
+.entry-text h2,
+.entry-text h3 {
+    margin-top: 0;
+    margin-bottom: 12px;
+}
+
+.entry-text p {
+    max-width: none;
+}
+
+/* Portadas musicales cuadradas */
+.album-cover {
+    width: 240px;
+    aspect-ratio: 1 / 1;
+
+    object-fit: cover;
+}
+
+/* Portadas AniManga verticales */
+.animanga-cover {
+    width: 220px;
+    aspect-ratio: 2 / 3;
+
+    object-fit: cover;
+}
+
+/* Diseño para celulares */
+@media (max-width: 750px) {
+    .entry-card {
+        flex-direction: column;
+        align-items: center;
+
+        padding: 20px;
+    }
+
+    .entry-card > a {
+        width: 100%;
+    }
+
+    .entry-text {
+        width: 100%;
+        text-align: center;
+    }
+
+    .album-cover {
+        width: 100%;
+        max-width: 300px;
+
+        margin: 0 auto;
+    }
+
+    .animanga-cover {
+        width: 100%;
+        max-width: 220px;
+
+        margin: 0 auto;
+    }
+}
+
+.entry-card.album > a {
+    flex: 0 0 300px;
+
+    width: 300px;
+    aspect-ratio: 1 / 1;
+
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.entry-card.album .album-cover {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+    max-width: none;
+
+    object-fit: cover;
+    border-radius: 0;
+}
+
+@media (max-width: 750px) {
+    .entry-card.album > a {
+        flex: none;
+
+        width: 100%;
+        max-width: 300px;
+        aspect-ratio: 1 / 1;
+
+        margin: 0 auto;
+    }
+}
+
+.entry-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    margin: 15px 0;
+}
+
+.entry-tag {
+    display: inline-block;
+
+    padding: 5px 10px;
+
+    font-size: 0.85rem;
+    line-height: 1.2;
+
+    border: 1px solid currentColor;
+    border-radius: 999px;
+
+    opacity: 0.9;
+}
+
+@media (max-width: 750px) {
+    .entry-tags {
+        justify-content: center;
+    }
 }

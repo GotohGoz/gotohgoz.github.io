@@ -3,7 +3,10 @@
   tipo: "Manga"
   categorias:
     - "Recomendaciones"
-  generos: "Yuri - Comedia Romántica - Harem"
+  generos:
+    - "Yuri"
+    - "Comedia romántica"
+    - "Harem"
   imagen: "/assets/images/animanga/Watanare.jpg"
   enlace: "https://myanimelist.net/manga/128538/Watashi_ga_Koibito_ni_Nareru_Wake_Nai_jan_Muri_Muri_%E2%80%BBMuri_ja_Nakatta"
   estado: "En serialización"
@@ -16,7 +19,9 @@
   categorias:
     - "Favoritos"
     - "Recomendaciones"
-  generos: "Drama - Música"
+  generos:
+    - "Drama"
+    - "Música"
   imagen: "/assets/images/animanga/MyGO!!!!!.jpg"
   enlace: "https://myanimelist.net/anime/54959/BanG_Dream_Its_MyGO"
   estado: "Finalizado"

@@ -1,0 +1,16 @@
+- titulo: "Mi página propia"
+  orden: "mi pagina personal"
+  estado: "En desarrollo"
+  fecha: "05/21/2026 - actualidad"
+  tecnologias:
+    - "HTML"
+    - "CSS"
+    - "JavaScript"
+    - "Jekyll"
+  imagen: "/assets/images/projects/Pagina.png"
+  resumen: >
+    Partió como una idea bastante vaga de querer mi propia página como se hacía en los internetes antiguos, y con el tiempo
+    ha ido evolucionando a lo que ves en este momento. Aunque sigue en desarrollo, ya va tomando una forma que me gusta bastante y me ha ayudado a 
+    aprender un poco de HTML, CSS, JavaScript y las bases del funcionamiento de GitHub.
+  enlace: "https://gotohgoz.github.io/"
+  repositorio: "https://github.com/GotohGoz/gotohgoz.github.io"

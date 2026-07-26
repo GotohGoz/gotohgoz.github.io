@@ -22,6 +22,65 @@ if (boton) {
     });
 }
 
+function actualizarBotonVolverArriba() {
+    boton.classList.toggle(
+        "visible",
+        window.scrollY > window.innerHeight
+    );
+}
+
+window.addEventListener(
+    "scroll",
+    actualizarBotonVolverArriba
+);
+
+actualizarBotonVolverArriba();
+
+function iniciarReloj() {
+    const reloj = document.getElementById("reloj");
+    const saludo = document.getElementById("saludo");
+
+    if (!reloj || !saludo) {
+        return;
+    }
+
+    function actualizarReloj() {
+        const ahora = new Date();
+
+        const horaChile = ahora.toLocaleString("es-CL", {
+            timeZone: "America/Santiago",
+            hour: "2-digit",
+            minute: "2-digit",
+            second: "2-digit",
+            hour12: false
+        });
+
+        reloj.textContent = `Hora en Chile: ${horaChile}`;
+
+        const hora = Number(
+            ahora.toLocaleString("en-US", {
+                timeZone: "America/Santiago",
+                hour: "numeric",
+                hour12: false
+            })
+        );
+
+        if (hora >= 6 && hora < 12) {
+            saludo.textContent =
+                "Anon-chan te da los buenos días!";
+        } else if (hora >= 12 && hora < 20) {
+            saludo.textContent =
+                "Anon-chan te desea una buena tarde!";
+        } else {
+            saludo.textContent =
+                "Anon-chan te desea una buena noche!";
+        }
+    }
+
+    actualizarReloj();
+    setInterval(actualizarReloj, 1000);
+}
+
 function iniciarFiltrosAnimanga() {
     const selectorTipo =
         document.getElementById("animanga-tipo");
@@ -131,15 +190,16 @@ function iniciarFiltrosAnimanga() {
     filtrarObras();
 }
 
-/*
-Funciona tanto si el script se carga antes como después
-de que el documento HTML esté preparado.
-*/
+function iniciarSitio() {
+    iniciarReloj();
+    iniciarFiltrosAnimanga();
+}
+
 if (document.readyState === "loading") {
     document.addEventListener(
         "DOMContentLoaded",
-        iniciarFiltrosAnimanga
+        iniciarSitio
     );
 } else {
-    iniciarFiltrosAnimanga();
+    iniciarSitio();
 }

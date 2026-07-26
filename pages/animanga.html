@@ -71,7 +71,7 @@ permalink: /animanga.html
 {% for obra in obras %}
 
     <article
-        class="animanga-card"
+        class="entry-card animanga-card"
         data-tipo="{{ obra.tipo | downcase | strip | escape }}"
         data-categorias="{{ obra.categorias | join: ',' | downcase | escape }}"
     >
@@ -90,14 +90,25 @@ permalink: /animanga.html
             >
         </a>
 
-        <div class="animanga-text">
+        <div class="entry-text animanga-text">
 
             <h3>{{ obra.titulo }}</h3>
 
-            <p class="animanga-detail">
-                {{ obra.tipo }} · {{ obra.generos }}
-            </p>
+            <div class="entry-tags">
 
+                <span class="entry-tag">
+                    {{ obra.tipo }}
+                </span>
+
+                {% assign generos = obra.generos | split: " - " %}
+
+                {% for genero in obra.generos %}
+                    <span class="entry-tag">
+                        {{ genero }}
+                    </span>
+                {% endfor %}
+
+            </div>
             {% if obra.estado %}
                 <p>
                     <strong>Estado:</strong>

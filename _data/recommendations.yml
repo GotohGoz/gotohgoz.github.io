@@ -1,6 +1,9 @@
 - artista: "ASIAN KUNG-FU GENERATION"
   titulo: "君繋ファイブエム (Connected to You 5M)"
-  detalle: "Álbum - 2003"
+  etiquetas:
+    - "Álbum"
+    - "2003"
+    - "J-Rock"
   enlace: "https://music.apple.com/cl/album/君繋ファイブエム/1536363189"
   imagen: "/assets/images/music/AKFG_Album.jpg"
   parrafos:
@@ -10,7 +13,10 @@
 
 - artista: "ELLEGARDEN"
   titulo: "The End of Yesterday"
-  detalle: "Álbum - 2022"
+  etiquetas:
+    - "Álbum"
+    - "2022"
+    - "J-Rock"
   enlace: "https://music.apple.com/cl/album/the-end-of-yesterday/1659013026"
   imagen: "/assets/images/music/ELLEGARDEN_Album.jpg"
   parrafos:

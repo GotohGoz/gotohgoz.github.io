@@ -1,6 +1,6 @@
 ---
 title: "Recomendaciones"
-heading: "Recomendaciones musicales!"
+heading: "Recomendaciones musicales"
 ---
 
 <!--Las carátulas deben tener una resolución igual o mayor a 1000 x 1000 pixeles 
@@ -21,7 +21,7 @@ heading: "Recomendaciones musicales!"
 
 {% for recomendacion in recomendaciones %}
 
-    <article class="album">
+    <article class="entry-card album">
 
         <a
             href="{{ recomendacion.enlace }}"
@@ -37,18 +37,34 @@ heading: "Recomendaciones musicales!"
             >
         </a>
 
-        <div class="album-text">
+        <div class="entry-text album-text">
 
             <h3>
                 {{ recomendacion.artista }} -
                 {{ recomendacion.titulo }}
             </h3>
 
-            {% if recomendacion.detalle %}
-                <p class="album-detail">
+        {% if recomendacion.etiquetas %}
+
+            <div class="entry-tags">
+
+                {% for etiqueta in recomendacion.etiquetas %}
+                    <span class="entry-tag">
+                        {{ etiqueta }}
+                    </span>
+                {% endfor %}
+
+            </div>
+
+        {% elsif recomendacion.detalle %}
+
+            <div class="entry-tags">
+                <span class="entry-tag">
                     {{ recomendacion.detalle }}
-                </p>
-            {% endif %}
+                </span>
+            </div>
+
+        {% endif %}
 
             {% for parrafo in recomendacion.parrafos %}
                 <p>{{ parrafo }}</p>

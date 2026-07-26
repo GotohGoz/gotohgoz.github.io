@@ -13,50 +13,10 @@ heading: "Bienvenidx a mi página!"
 
 <br><br>
 
-<img src="{{ '/assets/images/site/AnonGif.gif' | relative_url }}" width="300">
+<img
+    src="{{ '/assets/images/site/AnonGif.gif' | relative_url }}"
+    width="300"
+    alt="GIF de Anon"
+>
 
 <p id="saludo"></p>
-
-<script>
-function actualizarReloj() {
-    const ahora = new Date();
-
-    const horaChile = ahora.toLocaleString("es-CL", {
-        timeZone: "America/Santiago",
-        hour: "2-digit",
-        minute: "2-digit",
-        second: "2-digit",
-        hour12: false
-    });
-
-    document.getElementById("reloj").textContent =
-        "Hora en Chile: " + horaChile;
-        
-    const hora = Number(
-        ahora.toLocaleString("en-US", {
-            timeZone: "America/Santiago",
-            hour: "numeric",
-            hour12: false
-        })
-    );
-
-    let saludo;
-
-    if (hora >= 6 && hora < 12) {
-        saludo = "Anon-chan te da los buenos días!";
-    }
-
-    else if (hora >=12 && hora <20) {
-        saludo = "Anon-chan te desea una buena tarde!";
-    }
-
-    else {
-        saludo = "Anon-chan te desea una buena noche!"
-    }
-
-    document.getElementById("saludo").textContent = saludo;
-}
-
-actualizarReloj();
-setInterval(actualizarReloj, 1000);
-</script>

@@ -1,5 +1,140 @@
 ---
 title: "Proyectos"
-heading: "Proyectos"
+heading: "Proyectos y experimentos"
 permalink: /projects.html
 ---
+
+<p>
+    Aquí iré archivando proyectos que he empezado, y que estén en desarrollo o hayan sido abandonados. En su mayoría serán proyectos personales no muy grandes,
+    pero si hay algún trabajo de la uni que me haya gustado lo mostraré también jeje.
+</p>
+
+<p>
+    Además de proyectos, pondré cosas aún más pequeñas, experimentos o cosas que haya hecho en un momento de iluminación. Aunque en su mayoría no sean muy interesantes, 
+    por armar un pequeño portafolio no se pierde nada.
+</p>
+
+{% assign proyectos = site.data.projects | sort_natural: "orden" %}
+
+<div class="projects-list">
+
+{% for proyecto in proyectos %}
+
+    <article class="entry-card project-card">
+
+        {% if proyecto.imagen %}
+
+            <div class="project-image-container">
+
+                {% if proyecto.enlace %}
+
+                    <a
+                        href="{{ proyecto.enlace }}"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Ver {{ proyecto.titulo }}"
+                    >
+                        <img
+                            class="project-image"
+                            src="{{ proyecto.imagen | relative_url }}"
+                            alt="Imagen del proyecto {{ proyecto.titulo }}"
+                            loading="lazy"
+                        >
+                    </a>
+
+                {% else %}
+
+                    <img
+                        class="project-image"
+                        src="{{ proyecto.imagen | relative_url }}"
+                        alt="Imagen del proyecto {{ proyecto.titulo }}"
+                        loading="lazy"
+                    >
+
+                {% endif %}
+
+            </div>
+
+        {% endif %}
+
+        <div class="entry-text project-text">
+
+            <h2>{{ proyecto.titulo }}</h2>
+
+            <div class="project-metadata">
+
+                {% if proyecto.estado %}
+                    <p>
+                        <strong>Estado:</strong>
+                        {{ proyecto.estado }}
+                    </p>
+                {% endif %}
+
+                {% if proyecto.fecha %}
+                    <p>
+                        <strong>Periodo:</strong>
+                        {{ proyecto.fecha }}
+                    </p>
+                {% endif %}
+
+            </div>
+
+            {% if proyecto.tecnologias %}
+
+                <div class="entry-tags">
+
+                    {% for tecnologia in proyecto.tecnologias %}
+                        <span class="entry-tag">
+                            {{ tecnologia }}
+                        </span>
+                    {% endfor %}
+
+                </div>
+
+            {% endif %}
+
+            {% if proyecto.resumen %}
+                <p class="project-summary">
+                    {{ proyecto.resumen }}
+                </p>
+            {% endif %}
+
+            {% if proyecto.enlace or proyecto.repositorio %}
+
+                <div class="project-links">
+
+                    {% if proyecto.enlace %}
+                        <a
+                            href="{{ proyecto.enlace }}"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="project-link"
+                        >
+                            Ver proyecto
+                        </a>
+                    {% endif %}
+
+                    {% if proyecto.repositorio %}
+                        <a
+                            href="{{ proyecto.repositorio }}"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="project-link"
+                        >
+                            Ver código
+                        </a>
+                    {% endif %}
+
+                </div>
+
+            {% endif %}
+
+        </div>
+
+    </article>
+
+{% endfor %}
+
+</div>
+
+<h1>Más proyectos próximamente! (o quizás no)</h1>
