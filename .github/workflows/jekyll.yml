@@ -33,11 +33,6 @@ jobs:
           source: ./
           destination: ./_site
 
-      - name: Comprobar archivo de Discord
-        run: |
-          test -f ./_site/.well-known/discord
-          cat ./_site/.well-known/discord
-
       - name: Subir sitio construido
         uses: actions/upload-pages-artifact@v5
         with:
