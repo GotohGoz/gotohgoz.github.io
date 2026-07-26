@@ -49,7 +49,7 @@ heading: "Archivo de notas"
                             <time
                                 datetime="{{ post.date | date_to_xmlschema }}"
                             >
-                                {{ post.date | date: "%d/%m" }}
+                                {{ post.date | date: "%m/%d" }}
                             </time>
 
                             <a href="{{ post.url | relative_url }}">
