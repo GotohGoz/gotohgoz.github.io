@@ -1,0 +1,88 @@
+---
+title: "Archivo de notas"
+heading: "Archivo de notas"
+---
+
+<p>
+    Todas las notas que he publicado, agrupadas por año
+    y ordenadas desde la más reciente.
+</p>
+
+{% if site.posts.size > 0 %}
+
+    {% assign publicaciones_por_ano = site.posts
+        | group_by_exp: "post", "post.date | date: '%Y'" %}
+
+    <nav
+        class="archive-years"
+        aria-label="Saltar a un año"
+    >
+
+        {% for ano in publicaciones_por_ano %}
+
+            <a href="#ano-{{ ano.name }}">
+                {{ ano.name }}
+                <span>({{ ano.items | size }})</span>
+            </a>
+
+        {% endfor %}
+
+    </nav>
+
+    <div class="archive-list">
+
+        {% for ano in publicaciones_por_ano %}
+
+            <section
+                class="archive-year"
+                id="ano-{{ ano.name }}"
+            >
+
+                <h2>{{ ano.name }}</h2>
+
+                <ul>
+
+                    {% for post in ano.items %}
+
+                        <li class="archive-entry">
+
+                            <time
+                                datetime="{{ post.date | date_to_xmlschema }}"
+                            >
+                                {{ post.date | date: "%d/%m" }}
+                            </time>
+
+                            <a href="{{ post.url | relative_url }}">
+                                {{ post.title }}
+                            </a>
+
+                        </li>
+
+                    {% endfor %}
+
+                </ul>
+
+            </section>
+
+        {% endfor %}
+
+    </div>
+
+{% else %}
+
+    <p class="empty-message">
+        Todavía no hay notas publicadas.
+    </p>
+
+{% endif %}
+
+<p class="archive-back">
+
+    <a
+        class="project-link"
+        href="{{ '/blog/' | relative_url }}"
+    >
+        ← Volver a las notas
+    </a>
+
+</p>

@@ -1,0 +1,205 @@
+---
+title: "Notas"
+heading: "Notas y divagaciones"
+---
+
+<p>
+    Aquí iré compartiendo ocurrencias de mi vida, pequeños monólogos, reflexiones, cosas que se me hagan curiosas, y en general lo que se me venga a la cabeza nomas.
+</p>
+
+<p>
+    Por la misma naturaleza de esta sección, no hay temas especificos ni momentos de publicación. Todo dependerá de como me vaya sintiendo y si ando motivado.
+</p>
+
+<div class="blog-tools">
+
+    <a
+        class="project-link"
+        href="{{ '/blog/archivo/' | relative_url }}"
+    >
+        Ver archivo completo
+    </a>
+
+</div>
+
+{% if site.posts.size > 0 %}
+
+    <div class="post-list">
+
+        {% for post in paginator.posts %}
+
+            <article class="post-card">
+
+                {% if post.imagen %}
+
+                    <a
+                        class="post-card-image-link"
+                        href="{{ post.url | relative_url }}"
+                        aria-label="Leer {{ post.title }}"
+                    >
+                        <img
+                            class="post-card-image"
+                            src="{{ post.imagen | relative_url }}"
+                            alt="{{ post.imagen_alt | default: post.title }}"
+                            loading="lazy"
+                        >
+                    </a>
+
+                {% endif %}
+
+                <div class="post-card-text">
+
+                    <p class="post-date">
+                        <time datetime="{{ post.date | date_to_xmlschema }}">
+                            {{ post.date | date: "%d/%m/%Y" }}
+                        </time>
+                    </p>
+
+                    <h2>
+                        <a href="{{ post.url | relative_url }}">
+                            {{ post.title }}
+                        </a>
+                    </h2>
+
+                    {% if post.tags %}
+
+                        <div
+                            class="entry-tags"
+                            aria-label="Etiquetas"
+                        >
+
+                            {% for tag in post.tags %}
+                                <span class="entry-tag">
+                                    {{ tag }}
+                                </span>
+                            {% endfor %}
+
+                        </div>
+
+                    {% endif %}
+
+                    {% if post.resumen %}
+                        <p class="post-summary">
+                            {{ post.resumen }}
+                        </p>
+                    {% else %}
+                        <div class="post-summary">
+                            {{ post.excerpt }}
+                        </div>
+                    {% endif %}
+
+                    <a
+                        class="project-link"
+                        href="{{ post.url | relative_url }}"
+                    >
+                        Leer nota
+                    </a>
+
+                </div>
+
+            </article>
+
+        {% endfor %}
+
+    </div>
+
+{% else %}
+
+    <p class="empty-message">
+        Todavía no hay notas publicadas.
+    </p>
+
+{% endif %}
+
+{% if paginator.total_pages > 1 %}
+
+    <nav
+        class="pagination"
+        aria-label="Páginas de notas"
+    >
+
+        <div class="pagination-side">
+
+            {% if paginator.previous_page %}
+
+                <a
+                    class="pagination-link"
+                    href="{{ paginator.previous_page_path | relative_url }}"
+                >
+                    ← Más recientes
+                </a>
+
+            {% else %}
+
+                <span class="pagination-disabled">
+                    ← Más recientes
+                </span>
+
+            {% endif %}
+
+        </div>
+
+        <div class="pagination-pages">
+
+            {% for numero in (1..paginator.total_pages) %}
+
+                {% if numero == paginator.page %}
+
+                    <span
+                        class="pagination-current"
+                        aria-current="page"
+                    >
+                        {{ numero }}
+                    </span>
+
+                {% elsif numero == 1 %}
+
+                    <a
+                        class="pagination-number"
+                        href="{{ '/blog/' | relative_url }}"
+                    >
+                        {{ numero }}
+                    </a>
+
+                {% else %}
+
+                    {% assign ruta_pagina = site.paginate_path
+                        | replace: ':num', numero %}
+
+                    <a
+                        class="pagination-number"
+                        href="{{ ruta_pagina | relative_url }}"
+                    >
+                        {{ numero }}
+                    </a>
+
+                {% endif %}
+
+            {% endfor %}
+
+        </div>
+
+        <div class="pagination-side pagination-side-next">
+
+            {% if paginator.next_page %}
+
+                <a
+                    class="pagination-link"
+                    href="{{ paginator.next_page_path | relative_url }}"
+                >
+                    Más antiguas →
+                </a>
+
+            {% else %}
+
+                <span class="pagination-disabled">
+                    Más antiguas →
+                </span>
+
+            {% endif %}
+
+        </div>
+
+    </nav>
+
+{% endif %}

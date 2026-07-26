@@ -1,0 +1,99 @@
+---
+layout: default
+---
+
+<article class="post">
+
+    <header class="post-header">
+
+        <p class="post-date">
+            Publicado el
+            <time datetime="{{ page.date | date_to_xmlschema }}">
+                {{ page.date | date: "%m/%d/%Y" }}
+            </time>
+        </p>
+
+        {% if page.tags %}
+
+            <div
+                class="entry-tags post-tags"
+                aria-label="Etiquetas de la publicación"
+            >
+
+                {% for tag in page.tags %}
+                    <span class="entry-tag">
+                        {{ tag }}
+                    </span>
+                {% endfor %}
+
+            </div>
+
+        {% endif %}
+
+    </header>
+
+    {% if page.imagen %}
+
+        <img
+            class="post-cover"
+            src="{{ page.imagen | relative_url }}"
+            alt="{{ page.imagen_alt | default: page.title }}"
+        >
+
+    {% endif %}
+
+    <div class="post-content">
+        {{ content }}
+    </div>
+
+    <footer class="post-footer">
+
+        {% if page.previous or page.next %}
+
+            <nav
+                class="post-navigation"
+                aria-label="Navegación entre publicaciones"
+            >
+
+                <div class="post-navigation-item">
+
+                    {% if page.previous %}
+                        <span class="post-navigation-label">
+                            Nota anterior
+                        </span>
+
+                        <a href="{{ page.previous.url | relative_url }}">
+                            ← {{ page.previous.title }}
+                        </a>
+                    {% endif %}
+
+                </div>
+
+                <div class="post-navigation-item post-navigation-next">
+
+                    {% if page.next %}
+                        <span class="post-navigation-label">
+                            Nota siguiente
+                        </span>
+
+                        <a href="{{ page.next.url | relative_url }}">
+                            {{ page.next.title }} →
+                        </a>
+                    {% endif %}
+
+                </div>
+
+            </nav>
+
+        {% endif %} 
+
+        <a
+            class="project-link"
+            href="{{ '/blog/' | relative_url }}"
+        >
+            ← Volver a todas las notas
+        </a>
+
+    </footer>
+
+</article>
