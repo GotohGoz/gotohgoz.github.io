@@ -290,7 +290,7 @@ figcaption {
     line-height: 1.6;
 }
 
-.project-links {
+.entry-links {
     display: flex;
     flex-wrap: wrap;
     gap: 12px;
@@ -298,7 +298,7 @@ figcaption {
     margin-top: 20px;
 }
 
-.project-link {
+.entry-link {
     display: inline-block;
 
     padding: 8px 14px;
@@ -315,7 +315,7 @@ figcaption {
         transform 0.25s ease;
 }
 
-.project-link:hover {
+.entry-link:hover {
     color: #111;
     background-color: white;
     text-decoration: none;
@@ -349,7 +349,7 @@ figcaption {
     }
 
     .project-technologies,
-    .project-links {
+    .entry-links {
         justify-content: center;
     }
 }
@@ -982,4 +982,21 @@ figcaption {
 
 .archive-back {
     margin: 50px auto 20px;
+}
+
+.post-figure {
+    margin: 35px auto;
+    text-align: center;
+}
+
+.post-figure img {
+    margin: 0 auto;
+}
+
+.post-figure figcaption {
+    margin-top: 10px;
+
+    color: var(--color-secundario, #bbb);
+    font-size: 0.9rem;
+    font-style: italic;
 }

@@ -1,5 +1,12 @@
 - titulo: "わたしが恋人になれるわけないじゃん、ムリムリ！（※ムリじゃなかった!?）(There's No Freaking Way I'll be Your Lover! Unless...)"
   orden: "わたしがこいびとになれるわけないじゃん"
+  creditos:
+    - nombre: "みかみてれん (Mikami Teren)"
+      rol: "Historia"
+
+    - nombre: "むっしゅ (Musshu)"
+      rol: "Dibujo"
+
   tipo: "Manga"
   categorias:
     - "Recomendaciones"
@@ -7,9 +14,9 @@
     - "Yuri"
     - "Comedia romántica"
     - "Harem"
+  estado: "En serialización"
   imagen: "/assets/images/animanga/Watanare.jpg"
   enlace: "https://myanimelist.net/manga/128538/Watashi_ga_Koibito_ni_Nareru_Wake_Nai_jan_Muri_Muri_%E2%80%BBMuri_ja_Nakatta"
-  estado: "En serialización"
   comentario: >
     Aquí escribiría mi opinión personal sobre la obra.
 
@@ -22,8 +29,8 @@
   generos:
     - "Drama"
     - "Música"
+  estado: "Finalizado"
   imagen: "/assets/images/animanga/MyGO!!!!!.jpg"
   enlace: "https://myanimelist.net/anime/54959/BanG_Dream_Its_MyGO"
-  estado: "Finalizado"
   comentario: >
     Aquí iría otro comentario.

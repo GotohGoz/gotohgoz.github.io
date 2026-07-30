@@ -4,8 +4,8 @@
     - "Álbum"
     - "2003"
     - "J-Rock"
-  enlace: "https://music.apple.com/cl/album/君繋ファイブエム/1536363189"
   imagen: "/assets/images/music/AKFG_Album.jpg"
+  enlace: "https://music.apple.com/cl/album/君繋ファイブエム/1536363189"
   parrafos:
     - >
       Esto es una prueba. Aquí irá mi comentario personal
@@ -17,8 +17,8 @@
     - "Álbum"
     - "2022"
     - "J-Rock"
-  enlace: "https://music.apple.com/cl/album/the-end-of-yesterday/1659013026"
   imagen: "/assets/images/music/ELLEGARDEN_Album.jpg"
+  enlace: "https://music.apple.com/cl/album/the-end-of-yesterday/1659013026"
   parrafos:
     - >
       Esto es la prueba dos.

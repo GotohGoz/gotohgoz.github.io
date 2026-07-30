@@ -5,14 +5,11 @@ permalink: /animanga.html
 ---
 
 <p>
-    En esta sección hablaré y recomendaré algunos mangas y animes
-    que me han gustado! Además de mencionarles mis favoritos de
-    todos los tiempos!!
+    En esta sección hablaré y recomendaré algunos mangas y animes que me han gustado! Además de mencionarles mis favoritos de todos los tiempos!!
 </p>
 
 <p>
-    Estoy actualizando esta sección siempre que termine alguna
-    joyita, así que asegúrate de revisarla cada tanto!
+    Estoy actualizando esta sección siempre que termine alguna joyita, así que asegúrate de revisarla cada tanto!
 </p>
 
 <h2>
@@ -96,10 +93,6 @@ permalink: /animanga.html
 
             <div class="entry-tags">
 
-                <span class="entry-tag">
-                    {{ obra.tipo }}
-                </span>
-
                 {% assign generos = obra.generos | split: " - " %}
 
                 {% for genero in obra.generos %}
@@ -107,8 +100,25 @@ permalink: /animanga.html
                         {{ genero }}
                     </span>
                 {% endfor %}
-
+            
             </div>
+
+            {% if obra.creditos %}
+
+            <p>
+                <strong>Créditos:</strong>
+            </p>
+
+            <ul>
+                {% for credito in obra.creditos %}
+                    <li>
+                        {{ credito.rol }}: {{ credito.nombre }}
+                    </li>
+                {% endfor %}
+            </ul>
+
+            {% endif %}
+
             {% if obra.estado %}
                 <p>
                     <strong>Estado:</strong>
@@ -117,6 +127,29 @@ permalink: /animanga.html
             {% endif %}
 
             <p>{{ obra.comentario }}</p>
+            
+            {% if obra.links %}    
+
+            <div class="entry-links">
+
+                {% for link in obra.links %}
+                    
+                    <a
+                        class="entry-link"
+                        href="{{ link.url }}"
+                        {% unless link.url contains '/blog/' %}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        {% endunless %}
+                    >
+                        {{ link.texto }}
+                    </a>
+                
+                {% endfor %}
+            
+            </div>
+
+            {% endif %}
 
         </div>
 

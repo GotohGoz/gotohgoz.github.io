@@ -70,6 +70,27 @@ heading: "Recomendaciones musicales"
                 <p>{{ parrafo }}</p>
             {% endfor %}
 
+        {% if recomendacion.links %}
+
+            <div class="entry-links">
+
+                {% for link in recomendacion.links %}
+                    <a
+                        class="entry-link"
+                        href="{{ link.url }}"
+                        {% unless link.url contains '/blog/' %}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        {% endunless %}
+                    >
+                        {{ link.texto }}
+                    </a>
+                {% endfor %}
+
+            </div>
+
+        {% endif %}
+
         </div>
 
     </article>
