@@ -126,7 +126,9 @@ permalink: /animanga.html
                 </p>
             {% endif %}
 
-            <p>{{ obra.comentario }}</p>
+            {% for comentario in obra.comentario %}
+                <p>{{ comentario }}</p>
+            {% endfor %}
             
             {% if obra.links %}    
 
