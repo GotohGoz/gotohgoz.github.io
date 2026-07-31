@@ -6,10 +6,14 @@
     - "J-Rock"
   imagen: "/assets/images/music/AKFG_Album.jpg"
   enlace: "https://music.apple.com/cl/album/君繋ファイブエム/1536363189"
-  parrafos:
+  parrafos: 
     - >
-      Esto es una prueba. Aquí irá mi comentario personal
-      sobre el álbum.
+      No necesitan presentación, son mi banda favorita de todos los tiempos y de las más conocidas de la escena del rock japonés. Desde sus inicios con un estilo y sonido muy único
+      que ha envejecido como el vino, pasando por etapas más experimentales para llegar al sonido más maduro que escuchamos en sus últimos lanzamientos.
+    - >  
+      Algo que siempre me ha gustado de Ajikan son sus letras tan metafóricas y poéticas, siento que le dan un giro único dependiendo de quién la escuche pero el mensaje siempre llega.
+    - >
+      Pongo 君繋ファイブエム así como podría haber puesto cualquier álbum, EP o single, todos son un deleite sonoro y merecen ser escuchados.
 
 - artista: "ELLEGARDEN"
   titulo: "The End of Yesterday"
@@ -21,4 +25,27 @@
   enlace: "https://music.apple.com/cl/album/the-end-of-yesterday/1659013026"
   parrafos:
     - >
-      Esto es la prueba dos.
+      Algo más áspero y crudo, y eso me encanta. Ellegarden es una de esas bandas que solamente hace falta una canción para conquistarte
+    - >
+      La mejor forma de describirlos que se me ocurre es: "una versión más ruda y adulta de blink-182", quizás no sea muy descriptiva o correcta,
+      por lo que eres libre de corregirme si así lo deseas. De todas formas son una gran banda con una discografía exquisita.
+
+- artista: "blink-182"
+  titulo: "Enema of The State"
+  etiquetas:
+    - "Álbum"
+    - "1999"
+    - "Rock"
+    - "Pop-Punk"
+  imagen: "assets/images/music/blink-182_Album.png"
+  enlace: "https://music.apple.com/cl/album/enema-of-the-state/1440839912"
+  parrafos:
+    - >
+      Desde que era pequeño, uno de mis hermanos escuchaba mucho el álbum California de blink, y desde ese momento quedé fascinado por el ritmo y las guitarras (tenía como 12 años así 
+      que de la letra no entendía nada), pero por alguna razón siempre los confundí con los Red Hot Chili Peppers. No fue hasta hace poco que pude encontrarlos y redescubrir California
+      con el resto de sus álbumes.
+    - >
+      Le tengo un cariño especial a California, pero la verdad me gustan más sus primeros temas, cuando la irreverencia abundaba y los problemas adolescentes eran lo principal.
+      Me llevan a tiempo más sencillos, más dolorosos en ciertos aspectos, pero que recuerdo con cariño.
+    - >
+      Siempre he encontrado fascinante la forma en la que pueden producir canciones relativamente cortas pero muy pegadizas, sin hacer uso de cosas muy complejas. Son genios.
