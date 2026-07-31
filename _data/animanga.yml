@@ -34,3 +34,23 @@
   enlace: "https://myanimelist.net/anime/54959/BanG_Dream_Its_MyGO"
   comentario: >
     Aquí iría otro comentario.
+
+- titulo: "上伊那ぼたん、酔へる姿は百合の花 (Botan Kamiina Fully Blossoms When Drunk)"
+  orden: "かみいなぼたんよえるすがた"
+  creditos: 
+    - nombre: "塀 (Hey)"
+      rol: "Historia y dibujo"
+    - nombre: "Soigne"
+      rol: "Adaptación"
+  tipo: "Anime"
+  categorias:
+    - "Favoritos"
+    - "Recomendaciones"
+  generos:
+    - "GL"
+    - "Comedia"
+  estado: "Finalizado"
+  imagen: "/assets/images/animanga/Botan.JPG"
+  enlace: "https://myanimelist.net/anime/61186/Kamiina_Botan_Yoeru_Sugata_wa_Yuri_no_Hana"
+  comentario: >
+    Hice esto desde el celular, falta pulir el comentario
