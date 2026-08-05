@@ -127,7 +127,7 @@ permalink: /animanga.html
             {% endif %}
 
             {% for comentario in obra.comentario %}
-                <p>{{ comentario }}</p>
+                <p>{{ comentario | markdownify }}</p>
             {% endfor %}
             
             {% if obra.links %}    

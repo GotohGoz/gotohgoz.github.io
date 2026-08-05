@@ -67,7 +67,7 @@ heading: "Recomendaciones musicales"
         {% endif %}
 
             {% for parrafo in recomendacion.parrafos %}
-                <p>{{ parrafo }}</p>
+                <p>{{ parrafo | markdownify }}</p>
             {% endfor %}
 
         {% if recomendacion.links %}

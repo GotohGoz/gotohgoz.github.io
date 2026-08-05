@@ -190,6 +190,111 @@ function iniciarFiltrosAnimanga() {
     filtrarObras();
 }
 
+function iniciarArchivo() {
+
+    const year =
+        document.getElementById("archivo-year");
+
+    const month =
+        document.getElementById("archivo-month");
+
+    if (!year || !month) {
+        return;
+    }
+
+    const secciones =
+        document.querySelectorAll(".archive-year");
+
+    const meses = {
+        "01":"Enero",
+        "02":"Febrero",
+        "03":"Marzo",
+        "04":"Abril",
+        "05":"Mayo",
+        "06":"Junio",
+        "07":"Julio",
+        "08":"Agosto",
+        "09":"Septiembre",
+        "10":"Octubre",
+        "11":"Noviembre",
+        "12":"Diciembre"
+    };
+
+    function actualizarMeses() {
+
+        const mesAnterior = month.value;
+
+        month.innerHTML = "";
+
+        const disponibles = [];
+
+        secciones.forEach((s) => {
+
+            if (
+                s.dataset.year === year.value &&
+                !disponibles.includes(s.dataset.month)
+            ) {
+
+                disponibles.push(
+                    s.dataset.month
+                );
+
+            }
+
+        });
+
+        disponibles.reverse().forEach((m) => {
+
+            const option =
+                document.createElement("option");
+
+            option.value = m;
+            option.textContent = meses[m];
+
+            month.appendChild(option);
+
+        });
+
+        if (
+            disponibles.includes(mesAnterior)
+        ) {
+
+            month.value = mesAnterior;
+
+        }
+
+    }
+
+    function actualizarVista() {
+
+        secciones.forEach((s) => {
+
+            s.hidden = !(
+                s.dataset.year === year.value &&
+                s.dataset.month === month.value
+            );
+
+        });
+
+    }
+
+    year.addEventListener("change", () => {
+
+        actualizarMeses();
+        actualizarVista();
+
+    });
+
+    month.addEventListener(
+        "change",
+        actualizarVista
+    );
+
+    actualizarMeses();
+    actualizarVista();
+
+}
+
 function iniciarSitio() {
     iniciarReloj();
     iniciarFiltrosAnimanga();
@@ -203,3 +308,5 @@ if (document.readyState === "loading") {
 } else {
     iniciarSitio();
 }
+
+iniciarArchivo();

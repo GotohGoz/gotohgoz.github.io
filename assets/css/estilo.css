@@ -5,7 +5,7 @@
 }
 
 body {
-    background-color: #111;
+    background-color: #9955BB;
     color: white;
     text-align: center;
     font-family: Arial, sans-serif;
@@ -53,7 +53,7 @@ figure {
 figcaption {
     margin-top: 8px;
     font-size: 0.9em;
-    color: #bbbbbb;
+    color: #dddddd;
     font-style: italic;
 }
 
@@ -85,7 +85,7 @@ figcaption {
     border: none;
     border-radius: 50%;
 
-    background-color: #333;
+    background-color: #c181e0;
     color: white;
 
     font-size: 30px;
@@ -102,7 +102,7 @@ figcaption {
 }
 
 #volver-arriba:hover {
-    background-color: #555;
+    background-color: #a570c0;
 }
 
 #volver-arriba.visible {
@@ -225,7 +225,7 @@ figcaption {
     font: inherit;
     color: white;
 
-    background-color: #222;
+    background-color: #c181e0;
     border: 1px solid currentColor;
     border-radius: 6px;
 
@@ -233,7 +233,7 @@ figcaption {
 }
 
 .animanga-control select option {
-    color: #111;
+    color: #a570c0;
     background-color: white;
 }
 
@@ -365,7 +365,7 @@ figcaption {
     margin: 45px auto;
     padding: 25px;
 
-    border: 1px solid rgba(255, 255, 255, 0.25);
+    border: 2px solid rgba(255, 255, 255, 0.5);
     border-radius: 12px;
 }
 
@@ -383,7 +383,7 @@ figcaption {
         opacity 0.3s ease;
 }
 
-.entry-card a:hover img {
+.entry-card:not(.album) a:hover img {
     transform: scale(1.03);
     opacity: 0.9;
 }
@@ -462,6 +462,16 @@ figcaption {
 
     overflow: hidden;
     border-radius: 10px;
+
+    transition: transform 0.3s ease;
+}
+
+.entry-card.album > a:hover {
+    transform: scale(1.03);
+}
+
+.entry-card.album > a:hover img {
+    opacity: 0.9;
 }
 
 .entry-card.album .album-cover {
@@ -593,7 +603,7 @@ figcaption {
     margin: 0 0 10px;
 
     font-size: 0.9rem;
-    color: var(--color-secundario, #bbb);
+    color: var(--color-secundario, #dddddd);
 }
 
 .post-summary {
@@ -707,13 +717,8 @@ figcaption {
 
 .post-footer {
     margin-top: 50px;
-    padding-top: 25px;
-
-    border-top: 1px solid var(
-        --color-borde,
-        rgba(255, 255, 255, 0.25)
-    );
 }
+
 
 /* Blog en celulares */
 
@@ -752,13 +757,11 @@ figcaption {
     grid-template-columns: 1fr 1fr;
     gap: 30px;
 
-    margin-top: 50px;
-    padding-top: 25px;
+    padding: 25px 0;
+    margin-bottom: 25px;
 
-    border-top: 1px solid var(
-        --color-borde,
-        rgba(255, 255, 255, 0.25)
-    );
+    border-top: 1px solid var(--color-borde, rgba(255,255,255,.25));
+    border-bottom: 1px solid var(--color-borde, rgba(255,255,255,.25));
 }
 
 .post-navigation-item {
@@ -778,7 +781,7 @@ figcaption {
     display: block;
     margin-bottom: 8px;
 
-    color: var(--color-secundario, #bbb);
+    color: var(--color-secundario, #dddddd);
     font-size: 0.85rem;
 }
 
@@ -971,7 +974,7 @@ figcaption {
 }
 
 .archive-entry time {
-    color: var(--color-secundario, #bbb);
+    color: var(--color-secundario, #dddddd);
     font-size: 0.9rem;
 }
 
@@ -996,7 +999,7 @@ figcaption {
 .post-figure figcaption {
     margin-top: 10px;
 
-    color: var(--color-secundario, #bbb);
+    color: var(--color-secundario, #dddddd);
     font-size: 0.9rem;
     font-style: italic;
 }

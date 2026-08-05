@@ -4,85 +4,121 @@ heading: "Archivo de notas"
 ---
 
 <p>
-    Todas las notas que he publicado, agrupadas por año
-    y ordenadas desde la más reciente.
+    Todas las notas que he publicado, agrupadas por mes y año.
 </p>
 
 {% if site.posts.size > 0 %}
 
-    {% assign publicaciones_por_ano = site.posts
-        | group_by_exp: "post", "post.date | date: '%Y'" %}
+{% assign posts = site.posts | reverse %}
 
-    <nav
-        class="archive-years"
-        aria-label="Saltar a un año"
-    >
+{% assign publicaciones = posts
+    | group_by_exp: "post", "post.date | date: '%Y-%m'" %}
 
-        {% for ano in publicaciones_por_ano %}
+{% assign meses = "Enero,Febrero,Marzo,Abril,Mayo,Junio,Julio,Agosto,Septiembre,Octubre,Noviembre,Diciembre"
+    | split: "," %}
 
-            <a href="#ano-{{ ano.name }}">
-                {{ ano.name }}
-                <span>({{ ano.items | size }})</span>
-            </a>
+<section
+    class="animanga-filtros"
+    aria-label="Filtros del archivo"
+>
 
-        {% endfor %}
+    <div class="animanga-control">
 
-    </nav>
+        <label for="archivo-year">
+            Año:
+        </label>
 
-    <div class="archive-list">
+        <select id="archivo-year">
 
-        {% for ano in publicaciones_por_ano %}
+            {% assign anos = site.posts
+                | group_by_exp: "post", "post.date | date: '%Y'" %}
 
-            <section
-                class="archive-year"
-                id="ano-{{ ano.name }}"
-            >
+            {% for grupo in anos reversed %}
 
-                <h2>{{ ano.name }}</h2>
+                <option value="{{ grupo.name }}">
+                    {{ grupo.name }}
+                </option>
 
-                <ul>
+            {% endfor %}
 
-                    {% for post in ano.items %}
-
-                        <li class="archive-entry">
-
-                            <time
-                                datetime="{{ post.date | date_to_xmlschema }}"
-                            >
-                                {{ post.date | date: "%m/%d" }}
-                            </time>
-
-                            <a href="{{ post.url | relative_url }}">
-                                {{ post.title }}
-                            </a>
-
-                        </li>
-
-                    {% endfor %}
-
-                </ul>
-
-            </section>
-
-        {% endfor %}
+        </select>
 
     </div>
 
+    <div class="animanga-control">
+
+        <label for="archivo-month">
+            Mes:
+        </label>
+
+        <select id="archivo-month">
+        </select>
+
+    </div>
+
+</section>
+
+<div class="archive-list">
+
+    {% for grupo in publicaciones %}
+
+        {% assign partes = grupo.name | split: "-" %}
+        {% assign indice_mes = partes[1] | minus: 1 %}
+
+        <section
+            class="archive-year"
+            data-year="{{ partes[0] }}"
+            data-month="{{ partes[1] }}"
+        >
+
+            <h2>
+                {{ meses[indice_mes] }}
+                {{ partes[0] }}
+            </h2>
+
+            <ul>
+
+                {% for post in grupo.items %}
+
+                    <li class="archive-entry">
+
+                        <time
+                            datetime="{{ post.date | date_to_xmlschema }}"
+                        >
+                            {{ post.date | date: "%m/%d" }}
+                        </time>
+
+                        <a href="{{ post.url | relative_url }}">
+                            {{ post.title }}
+                        </a>
+
+                    </li>
+
+                {% endfor %}
+
+            </ul>
+
+        </section>
+
+    {% endfor %}
+
+</div>
+
 {% else %}
 
-    <p class="empty-message">
-        Todavía no hay notas publicadas.
-    </p>
+<p class="empty-message">
+    Todavía no hay notas publicadas.
+</p>
 
 {% endif %}
 
 <p class="archive-back">
 
-    <a
-        class="project-link"
-        href="{{ '/blog/' | relative_url }}"
-    >
-        ← Volver a las notas
-    </a>
+<a
+    class="project-link"
+    href="{{ '/blog/' | relative_url }}"
+>
+    ← Volver a las notas
+</a>
 
 </p>
