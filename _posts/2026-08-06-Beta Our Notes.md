@@ -65,4 +65,4 @@ Como en el Garupa, podemos mejorar los instrumentos de las chicas, para lo que n
 
 Para ser una beta se ve que hay varias cosas que ya están bien pulidas (fuera de la estabilidad del juego y los servidores, que se entiende), pero hay varias opciones que están bloqueadas hasta el lanzamiento que me tienen con más curiosidad que nada. Pero en general diría que es una mejora considerable respecto a la entrega anterior y tengo muchas ganas de ver el resultado final cuando salga oficialmente!
 
-Pondré mis pensamientos y opiniones en orden una vez acabe la beta y me dedique a hacer el video, pero no hago promesas
+Pondré mis pensamientos y opiniones en orden una vez acabe la beta y me dedique a hacer el video, pero no hago promesas.
