@@ -10,7 +10,7 @@
     - nombre: "竹嶋 えく (Takeshima Eku)"
       rol: "Diseño de personajes"
   tipo: "Manga"
-  categorias:
+  categoria:
     - "Recomendaciones"
   generos:
     - "Yuri"
@@ -39,16 +39,14 @@
     - >
       Si buscas algo tranquilo, que no te queme mucho la cabeza, sea relativamente fácil de digerir y sea Yuri, no busques más que Renako y compañia llegaron a tu rescate.
 
-
 - titulo: "BanG Dream! It's MyGO!!!!!"
   orden: "bang dream its mygo"
   creditos:
     - nombre: "Bushiroad"
       rol: "Creadores"
   tipo: "Anime"
-  categorias:
+  categoria:
     - "Favoritos"
-    - "Recomendaciones"
   generos:
     - "Drama"
     - "Música"
@@ -83,9 +81,8 @@
     - nombre: "株式会社ソワネ (Soigne Co., Ltd.)"
       rol: "Adaptación"
   tipo: "Anime"
-  categorias:
+  categoria:
     - "Favoritos"
-    - "Recomendaciones"
   generos:
     - "GL"
     - "Comedia"
@@ -117,9 +114,8 @@
     - nombre: "株式会社動画工房 (Doga Kobo, Inc.)"
       rol: "Adaptación"
   tipo: "Anime"
-  categorias:
+  categoria:
     - "Favoritos"
-    - "Recomendaciones"
   generos:
     - "Yuri"
     - "Comedia"
@@ -146,9 +142,8 @@
     - nombre: "Bushiroad"
       rol: "Creadores"
   tipo: "Anime"
-  categorias:
+  categoria:
     - "Favoritos"
-    - "Recomendaciones"
   generos:
     - "Drama"
     - "Música"
@@ -174,7 +169,7 @@
     - nombre: "大久保 篤 (Ohkubo Atsushi)"
       rol: "Historia y Dibujo"
   tipo: "Manga"
-  categorias:
+  categoria:
     - "Recomendaciones"
   generos:
     - "Shounen"
