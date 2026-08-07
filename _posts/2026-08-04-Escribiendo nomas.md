@@ -1,5 +1,5 @@
 ---
-title: "Rambling nomas"
+title: "Escribiendo nomas"
 resumen: "Desahago, más o menos"
 
 tags:
