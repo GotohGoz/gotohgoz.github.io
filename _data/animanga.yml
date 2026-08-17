@@ -5,8 +5,11 @@
       rol: "Novela Ligera Original"
 
     - nombre: "むっしゅ (Musshu)"
-      rol: "Dibujo"
+      rol: "Dibujo (Parte 1, tomo 1-9)"
 
+    - nombre: "工藤 える (Kudo Eru)"
+      rol: "Dibujo (Parte 2, a partir del tomo 10)"
+      
     - nombre: "竹嶋 えく (Takeshima Eku)"
       rol: "Diseño de personajes"
   tipo: "Manga"
