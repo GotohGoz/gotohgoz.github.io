@@ -1,6 +1,6 @@
 # Aprendiendo a hacer una página web
 
-## Estado al 08/50/2026
+## Estado al 08/05/2026
 
 He estado metiendo contenido, pero además de eso le di una revisada a todas las secciones con un texto considerable para corregirlo o meterle más cosas. Además de actualizar el color y mejorar el funcionamiento de la sección de "archivo de notas".
 
